@@ -25,7 +25,15 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.27.5",
+    "lint-staged": "^14.0.1",
     "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --writes .",
+      "eslint --quiet --fix .",
+      "echo hello"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
