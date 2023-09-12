@@ -62,6 +62,16 @@ const App = () => {
           labelComponent={<VictoryTooltip />}
           style={{ data: { width: 8, fill: ({ datum }) => (datum.id === selectedId ? '#87ceeb' : '#333333') } }}
           standalone={false}
+          events={[
+            {
+              target: 'data',
+              eventHandlers: {
+                onClick: (_, { datum }: { datum: { id: string } }) => {
+                  setSelectedId(datum.id);
+                },
+              },
+            },
+          ]}
         />
         <VictoryAxis
           key='area'
