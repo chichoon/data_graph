@@ -1,5 +1,13 @@
 import { Dispatch, SetStateAction } from 'react';
-import { VictoryArea, VictoryAxis, VictoryBar, VictoryChart, VictoryTheme, VictoryTooltip } from 'victory';
+import {
+  VictoryArea,
+  VictoryAxis,
+  VictoryBar,
+  VictoryChart,
+  VictoryLegend,
+  VictoryTheme,
+  VictoryTooltip,
+} from 'victory';
 
 interface Props {
   areaValues: { x: Date; y: number; id: string }[];
@@ -12,6 +20,14 @@ interface Props {
 
 export const Chart = ({ areaValues, barValues, areaMaximum, barMaximum, selectedId, setSelectedId }: Props) => (
   <VictoryChart theme={VictoryTheme.material} width={1000} height={500}>
+    <VictoryLegend
+      centerTitle
+      orientation='horizontal'
+      data={[
+        { name: 'value_bar', symbol: { fill: '#333333' } },
+        { name: 'value_area', symbol: { fill: 'rgba(100, 250, 100, 0.8)' } },
+      ]}
+    />
     <VictoryAxis key='x' scale='time' standalone={false} tickFormat={(tick) => new Date(tick).toLocaleTimeString()} />
     <VictoryAxis
       key='bar'
