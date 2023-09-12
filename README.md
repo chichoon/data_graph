@@ -3,6 +3,8 @@
   <img src="https://img.shields.io/badge/-Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=Sass&logoColor=white">
 </p>
 
+## [배포 페이지](https://data-graph-tan.vercel.app)
+
 ## 기능 소개
 
 주어진 Mock Data를 그래프로 출력합니다.
