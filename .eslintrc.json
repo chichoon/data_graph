@@ -17,10 +17,8 @@
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off", // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
-    "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }],
-    "no-console": "off"
+    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }]
   }
 }

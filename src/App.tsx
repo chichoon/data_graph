@@ -1,6 +1,12 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 
-const App = () => (
+const App = () => {
+  const [state, setState] = useState();
+  useEffect(() => {
+    console.log(state);
+  }, []);
+  return (
     <div className='App'>
       <header className='App-header'>
         <p>
@@ -12,5 +18,6 @@ const App = () => (
       </header>
     </div>
   );
+};
 
 export default App;
