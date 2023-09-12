@@ -4,7 +4,6 @@ import './App.css';
 const App = () => {
   const [state, setState] = useState();
   useEffect(() => {
-    console.log('hihi');
     console.log(state);
   }, []);
   return (
