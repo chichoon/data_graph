@@ -27,10 +27,38 @@
 
 툴팁에서는 ID, value_bar, value_area 를 출력합니다.
 
-### 사용한 라이브러리
+## 사용한 라이브러리
 
 그래프 출력, 그래프 이벤트 핸들링, 툴팁 출력은 [Victory](https://formidable.com/open-source/victory/) 라이브러리를 사용하였습니다.
 
 스타일링은 Scss를 이용하였습니다.
 
-### 고민한 사항
+## 고민한 사항
+
+### 버튼에 이벤트 부착하기
+
+```ts
+
+export const SelectIdButtons = ({ ids, setSelectedId }: Props) => {
+  function handleClickButtons(e: MouseEvent<HTMLButtonElement>) {
+    setSelectedId((e.target as Element).attributes.getNamedItem('data-id')?.value ?? '');
+  }
+
+  return (
+    <button className={styles.buttonWrapper} type='button' onClick={handleClickButtons}>
+      <button type='button' data-id='none' className={styles.buttons}>
+        없음
+      </button>
+      {ids.map((id) => (
+        <button type='button' data-id={id} key={id} className={styles.buttons}>
+          {id}
+        </button>
+      ))}
+    </button>
+  );
+};
+```
+
+여러 버튼이 비슷한 동작을 하기 때문에 각각의 핸들러를 선언하기보다는 부모 컴포넌트에 단 하나의 핸들러를 부착하고, 이벤트를 위임받아 적절한 처리를 하도록 하였습니다.
+
+이때 자식 버튼들을 구분하기 위해 data-id property를 사용하였습니다.
